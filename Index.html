@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<html>
+
+<head>
+	<title>Day 4 HTML</title>
+	<link rel="stylesheet" type="text/css" href="Asset/style.css">
+	<img src="Asset/rej.jpg" alt="Image">
+
+<style>
+
+h1
+{
+	color: #6600CC;
+}
+
+</style>
+
+</head>
+
+<body>
+	<div hidden class="color" id="myColor">
+		<h1>こんにちは! Rejです</h1>
+		<p>My name is Regina Gempis.</p>
+		<p>You can call me "Rej".</p>
+		<p>I'm 27 years old this year.</p>
+		<p>I live in San Jose del Monte, Bulacan.</p>
+		<p>My hobbies are:</p>
+		<ul>
+			<li>Reading novels, webtoon/manga</li>
+			<li>Playing PC games</li>
+			<li>Watching movies</li>
+			<li>Listening to music</li>
+		</ul>
+		<h3 style="color: #6600CC;">よろしくお願いします!</h3>
+
+		<button onclick="randomColor()"> Click Me! </button>
+		<br>
+		<button id="FadeOutBtn"> Hide Details </button>
+	</div>
+
+	<div>
+		<button id="FadeInBtn"> Show Details </button>
+	</div>
+
+</body>
+
+<script>
+
+function randomColor(){
+	var color = document.getElementById("myColor");
+	var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+	color.style.backgroundColor= randomColor;
+}
+
+$(document).ready(function(){
+
+	$('#FadeInBtn').click(function(){
+	$('#myColor').fadeIn('slow');
+	$('#FadeInBtn').fadeOut('fast');
+	});
+
+	$('#FadeOutBtn').click(function(){
+	$('#myColor').fadeOut('fast');
+	$('#FadeInBtn').fadeIn('slow');
+	});
+});
+
+</script>
+
+</html>
